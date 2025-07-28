@@ -1,0 +1,4 @@
+[server]
+port = 8080                # Cloud Run richiede questa porta
+enableCORS = false         # Evita problemi di CORS
+headless = true            # Necessario per ambienti senza interfaccia grafica

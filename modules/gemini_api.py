@@ -1,7 +1,7 @@
 import os
 import google.generativeai as genai
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key="AIzaSyCGBdbg8MdHor_qRubS7nQ11JJmajMecNk")
 
 def analyze_report(report_data):
     prompt = f"Analizza questo report di sicurezza e identifica i rischi: {report_data}"

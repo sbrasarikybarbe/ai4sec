@@ -8,8 +8,8 @@ st.title("🔐 AI4Sec – AI-powered Security Report Analyzer")
 uploaded_file = st.file_uploader("Carica un report di sicurezza (JSON, XML, TXT)", type=["json", "xml", "txt"])
 if uploaded_file:
     report_data = parser.parse_report(uploaded_file)
-    st.success("Report caricato e analizzato.")
     st.success("API KEY:")
+    st.success("Report caricato e analizzato.")
     st.success(os.getenv("GEMINI_API_KEY"))
 
     with st.spinner("Analisi AI in corso..."):

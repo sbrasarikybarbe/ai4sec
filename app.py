@@ -1,6 +1,7 @@
 import streamlit as st
 from modules import parser, gemini_api, risk_classifier, mitigations, dashboard
 
+print("API KEY:", os.getenv("GEMINI_API_KEY"))
 st.set_page_config(page_title="AI4Sec", layout="wide")
 st.title("🔐 AI4Sec – AI-powered Security Report Analyzer")
 

@@ -1,7 +1,6 @@
 import streamlit as st
 from modules import parser, gemini_api, risk_classifier, mitigations, dashboard
 
-print("API KEY:", os.getenv("GEMINI_API_KEY"))
 st.set_page_config(page_title="AI4Sec", layout="wide")
 st.title("🔐 AI4Sec – AI-powered Security Report Analyzer")
 
@@ -9,6 +8,7 @@ uploaded_file = st.file_uploader("Carica un report di sicurezza (JSON, XML, TXT)
 if uploaded_file:
     report_data = parser.parse_report(uploaded_file)
     st.success("Report caricato e analizzato.")
+    st.success("API KEY:", os.getenv("GEMINI_API_KEY"))
 
     with st.spinner("Analisi AI in corso..."):
         ai_analysis = gemini_api.analyze_report(report_data)

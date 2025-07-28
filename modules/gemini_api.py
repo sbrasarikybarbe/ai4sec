@@ -2,8 +2,9 @@
 import os
 import google.generativeai as genai
 
+print("API KEY:", os.getenv("GOOGLE_API_KEY"))
 api_key = os.getenv("GEMINI_API_KEY")
-genai.configure(api_key='AIzaSyAAwQ7iuxnZo2AlVhd89o_9FBixdUOISbQ')
+genai.configure(api_key=api_key)
 
 
 def analyze_report(report_data):

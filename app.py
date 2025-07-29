@@ -2,7 +2,7 @@ import streamlit as st
 from modules import parser, gemini_api, risk_classifier, mitigations, dashboard
 
 st.set_page_config(page_title="AI4Sec", layout="wide")
-st.title("🔐 AI4Sec1 – AI-powered Security Report Analyzer")
+st.title("🔐 AI4Sec – AI-powered Security Report Analyzer")
 
 uploaded_file = st.file_uploader("Carica un report di sicurezza (JSON, XML, TXT)", type=["json", "xml", "txt"])
 if uploaded_file:

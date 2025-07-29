@@ -13,5 +13,7 @@ Log: Jul 29 06:26:44 server1 auditd[1130]: ALERT: suspicious command executed by
 → Category: Elevation of Privilege  
 → Risk: High
 
+Respond in English.
+
 Content to analyze:
 {{CONTENT}}

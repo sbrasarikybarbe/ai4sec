@@ -17,7 +17,7 @@ For each detected threat, provide a structured output with the following format:
 3. **Suggested Mitigation**: Recommended actions to contain, remediate, or prevent the threat (e.g., isolate host, revoke credentials, patch vulnerability, restore from backup).
 
 Your goal is to support SOC analysts, red teams, and blue teams in early identification and response to advanced threats.
-
+The output must follow this pattern: "Threat Name:\s*(.*?)\n(?:→|->)\s*Technical Evidence:\s*(.*?)\n(?:→|->)\s*Suggested Mitigation:\s*(.*?)(?=\nThreat Name:|\Z)"
 Here the log file content: {{CONTENT}}
 
 

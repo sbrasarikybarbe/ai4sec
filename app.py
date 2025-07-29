@@ -1,4 +1,5 @@
 import streamlit as st
+import google.auth
 import google.generativeai as genai
 import re
 import pandas as pd

@@ -9,7 +9,13 @@ def analyze_report(report_data):
     with open("modules/prompt.txt", "r") as file:
         prompt_template = file.read()
 
-    prompt = prompt_template.replace("{{CONTENT}}", json.dumps(report_data, indent=2))
+    # Se è un dizionario (es. JSON), lo convertiamo in stringa formattata
+    if isinstance(report_data, dict):
+        content = json.dumps(report_data, indent=2)
+    else:
+        content = str(report_data)
+
+    prompt = prompt_template.replace("{{CONTENT}}", content)
 
     model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)

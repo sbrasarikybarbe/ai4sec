@@ -1,9 +1,8 @@
-
-import os
+import google.auth
 import google.generativeai as genai
 
-api_key = os.getenv("GEMINI_API_KEY")
-genai.configure(api_key=api_key)
+credentials, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
+genai.configure(credentials=credentials)
 
 def analyze_report(report_data):
     prompt = f"Analizza questo report di sicurezza e identifica i rischi: {report_data}"

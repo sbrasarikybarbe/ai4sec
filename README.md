@@ -6,6 +6,7 @@ AI4Sec is a Streamlit-based application that leverages Generative AI to automati
 The tool uses a structured prompt to guide the AI in recognizing threats and provides actionable insights including technical evidence and suggested mitigations.
 
 🔍 Features
+
 Automated Threat Detection: Uses GenAI to analyze logs and identify suspicious or malicious activities.
 Structured Output: Displays results in a clear format:
 Threat Name

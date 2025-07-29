@@ -6,7 +6,7 @@ credentials, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/ge
 genai.configure(credentials=credentials)
 
 def analyze_report(report_data):
-    with open("modules/prompt.txt", "r") as file:
+    with open("prompt.txt", "r") as file:
         prompt_template = file.read()
 
     # Se è un dizionario (es. JSON), lo convertiamo in stringa formattata

@@ -36,22 +36,20 @@ if uploaded_file:
     st.text_area("Raw Output", analysis, height=300)
 
     # Parse AI output into structured table
-    pattern = r"Log:\s*(.*?)\n→ Anomaly:\s*(.*?)\n→ Category:\s*(.*?)\n→ Risk:\s*(.*?)\n→ Mitigation:\s*(.*?)(?=\nLog:|\Z)"
+    pattern = r"Threat Name:\s*(.*?)\n→ Technical Evidence:\s*(.*?)\n→ Suggested Mitigation:\s*(.*?)(?=\nThreat Name:|\Z)"
     matches = re.findall(pattern, analysis, re.DOTALL)
-
+    
     if matches:
         data = []
-        for log, anomaly, category, risk, mitigation in matches:
+        for name, evidence, mitigation in matches:
             data.append({
-                "Anomaly": anomaly.strip(),
-                "Log Reference": log.strip(),
-                "Category": category.strip(),
-                "Risk Level": risk.strip(),
-                "Mitigation": mitigation.strip()
+                "Threat Name": name.strip(),
+                "Technical Evidence": evidence.strip(),
+                "Suggested Mitigation": mitigation.strip()
             })
-
+    
         df = pd.DataFrame(data)
-        st.subheader("📊 Detected Anomalies and Mitigations")
+        st.subheader("🛡️ Detected Threats and Mitigations")
         st.dataframe(df, use_container_width=True)
     else:
-        st.warning("No structured anomalies found in the AI output.")
+        st.warning("No structured threats found in the AI output.")

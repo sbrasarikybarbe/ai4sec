@@ -5,7 +5,11 @@ credentials, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/ge
 genai.configure(credentials=credentials)
 
 def analyze_report(report_data):
-    prompt = f"Analizza questo report di sicurezza e identifica i rischi: {report_data}"
+    with open("modules/prompt.txt", "r") as file:
+        prompt_template = file.read()
+
+    prompt = prompt_template.replace("{{CONTENT}}", report_data)
+
     model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)
     return response.text

@@ -8,7 +8,7 @@ def analyze_report(report_data):
     with open("modules/prompt.txt", "r") as file:
         prompt_template = file.read()
 
-    prompt = prompt_template.replace("{{CONTENT}}", report_data)
+    prompt = prompt_template.replace("{{CONTENT}}", str(report_data))
 
     model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)

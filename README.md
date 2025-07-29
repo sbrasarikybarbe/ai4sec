@@ -1,25 +1,15 @@
-# 🔐 AI4Sec – AI-powered Security Report Analyzer
+🛡️ AI4Sec – AI-Powered Threat Detection Tool
+Overview
+AI4Sec is a Streamlit-based application that leverages Generative AI to automatically analyze security logs and detect potential cyber threats. It is designed to assist SOC analysts, red teams, and blue teams in identifying malicious activities such as ransomware, lateral movement, privilege escalation, and data exfiltration.
 
-**AI4Sec** is an interactive Streamlit application that leverages Google Gemini (Generative AI) to automatically analyze security reports, classify risks using STRIDE and OWASP Top 10 models, suggest mitigations, and visualize results through interactive dashboards.
+The tool uses a structured prompt to guide the AI in recognizing threats and provides actionable insights including technical evidence and suggested mitigations.
 
-## 🚀 Features
-
-- 📄 Upload security reports in JSON, XML, or TXT format
-- 🤖 Automatic analysis using Google Gemini API
-- 🧠 Risk classification based on STRIDE and OWASP Top 10
-- 🛡️ Mitigation suggestions for each identified risk
-- 📊 Interactive dashboard with charts and tables
-
-## 🧰 Requirements
-
-- Python 3.10+
-- Google Cloud Project with Gemini API enabled
-- Proper authentication for `google-generativeai` (ADC or service account)
-
-## 🧪 Run Locally
-
-```bash
-git clone https://github.com/sbrasarikybarbe/ai4sec.git
-cd ai4sec
-pip install -r requirements.txt
-streamlit run app.py
+🔍 Features
+Automated Threat Detection: Uses GenAI to analyze logs and identify suspicious or malicious activities.
+Structured Output: Displays results in a clear format:
+Threat Name
+Technical Evidence
+Suggested Mitigation
+Log Parsing & Visualization: Converts AI output into a structured table for easy review.
+Supports STRIDE, OWASP, and MITRE ATT&CK classification (via prompt logic).
+Cloud-native Deployment: Designed to run entirely on Google Cloud, no local execution required.

@@ -18,4 +18,6 @@ For each detected threat, provide a structured output with the following format:
 
 Your goal is to support SOC analysts, red teams, and blue teams in early identification and response to advanced threats.
 
+Here the log file content: {{CONTENT}}
+
 

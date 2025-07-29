@@ -14,8 +14,8 @@ def analyze_report(report_data):
         content = json.dumps(report_data, indent=2)
     else:
         content = str(report_data)
-
-    prompt = prompt_template.replace("{{CONTENT}}", content)
+    
+    prompt = prompt_template.replace("{{CONTENT}}", content) + "\nRespond in English."
 
     model = genai.GenerativeModel("gemini-2.5-flash-lite-preview-06-17")
     response = model.generate_content(prompt)

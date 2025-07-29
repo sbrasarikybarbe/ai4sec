@@ -1,3 +1,4 @@
+import json
 import google.auth
 import google.generativeai as genai
 
@@ -8,7 +9,7 @@ def analyze_report(report_data):
     with open("modules/prompt.txt", "r") as file:
         prompt_template = file.read()
 
-    prompt = prompt_template.replace("{{CONTENT}}", str(report_data))
+    prompt = prompt_template.replace("{{CONTENT}}", json.dumps(report_data, indent=2))
 
     model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)

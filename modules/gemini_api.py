@@ -17,6 +17,6 @@ def analyze_report(report_data):
 
     prompt = prompt_template.replace("{{CONTENT}}", content)
 
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash-lite-preview-06-17")
     response = model.generate_content(prompt)
     return response.text
